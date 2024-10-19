@@ -5,6 +5,7 @@
             border: 1px solid black;
             text-align: center;
             border-collapse: collapse;
+            border-radius: 100%;
         }
         td {
             text-align: left;
