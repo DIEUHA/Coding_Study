@@ -6,51 +6,63 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="main"> 
-    <div class="box box1">Seclection 1 </div>
-    <div class="box box2">Seclection 2</div>
-    <div class="box box3">Seclection 3</div>
-    <div class="box box4">Seclection 4</div>
+  <div class="main">
+  <div class=box1> Box 1 </div>
+  <div class="box-right"> 
+    <div class="box23"> 
+      <div class="box2"> Box 2</div>
+      <div class="box3"> Box 3</div>
+    </div>
+    <div class="box4"> Box 4</div>
   </div>
-  <style>
-    body {
-      margin: 0;
-    }
-    .main {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      position:absolute;
-    }
-    .box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .box1 {
-      width: 25%;
-      height:100%;
-      background: red;
+</div>
+  <style> 
+  * {margin: 0}
+  .main {
+    display:flex; 
+    width: 100%;
+    height: 100%;
+  }
+  .box-right {
+    width:75%;
+  }
+  .box23 {
+    display:flex; 
+    width:100%;
+  }
+  .box1 {
+    width:25%; 
+    height:100vh; 
+    background: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
-    }
-    .box2 {
-      width: 25%;
-      height: 50%;
-      background: green;
-    }
-    .box3 {
-      width: 50%;
-      height: 50%;
-      background: blue;
-    }
-    .box4 {
-      width: 75%;
-      height: 50%;
-      background: purple;
-      position: absolute;
-      top:50%;
-      left:25%;
-    }
-  </style>
+  }
+  .box2 {
+    width:25%; 
+    height: 50vh; 
+    background: red; 
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .box3 {
+    width:75%; 
+    height:50vh; 
+    background: green; 
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .box4 {
+    width:100%; 
+    height: 50vh; 
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  </style> 
 </body>
 </html>

@@ -1,16 +1,32 @@
-<div class="main"> 
-  <div class="ring"> </div>
-  </div>
-  <style> 
-    * {margin:0;
-      background-color: #62306D};
-    .main {
-      height:100px;
-      width: 100px; 
-      background-color:#d2d2d2; 
-      border-radius: 100%;
-      border: 20px dashed red; 
-      
-      
-    }
-  </style>
+<div class="main">
+  <div class="yel"> </div>
+  <div class="pink"> </div>
+</div>
+<style> 
+* {margin:0}
+  .main {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#8AB8B6;
+    height:100%
+  }
+  .yel {
+    width:60px; 
+    height:60px; 
+    background:#F3EAD2;
+    border-radius:100% 0 0 100%;
+    position:absolute;
+    left:20px; 
+    box-shadow:120px 0 #F3EAD2, 240px 0 #F3EAD2
+  }
+  .pink {
+    width:60px; 
+    height:60px;
+    background:#D96C7B;
+    border-radius:100%;
+    position:absolute; 
+    left:80px;
+    box-shadow:120px 0 #D96C7B,240px 0 #D96C7B
+  }
+</style>

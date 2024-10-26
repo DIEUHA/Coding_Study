@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="button"> Button</div>
+    <div class="list-main"> 
+        <div class="list list-1"> List 1</div>
+        <div class="list list-2"> List 2</div>
+        <div class="list list-3"> List 3</div>
+    </div>
+    <style> 
+    .button {
+        width: 100px; 
+        height:50px; 
+        background: purple;
+        text-align: center;
+        place-content: center;
+        color: white;
+    }
+    .list-main {
+        width: 200px;
+        height: 150px;
+        box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.24);
+        display:none;
+    }
+    .list {
+        width: 200px;
+        height: 50px; 
+        background: white;
+        text-align: center;
+        place-content: center;
+        border-bottom: solid 1px red;
+        color:purple;
+    }
+    .button:hover + .list-main{
+        display:block; 
+    }
+    .list-main .list:last-child {
+        border-bottom: none;
+    }
+    </style> 
+</body>
+</html>
