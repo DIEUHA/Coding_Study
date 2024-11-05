@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="BT_form.css" />
+  </head>
+  <body>
+    <div class="form">
+      <h2>Sign Up</h2>
+      <div class="main"> 
+      <div class="num">1</div>
+      <h4> Your Basic Infor</h4>
+      </div>
+      <form>
+        <label for="t1"> Name: </label> <br />
+        <input type="text" id="t1" name="t1" value="" /> <br />
+        <label for="t2"> Email: </label> <br />
+        <input type="email" id="t2" name="t2" value="" /> <br />
+        <label for="t3"> Password: </label> <br />
+        <input type="password" id="t3" name="t3" value="" /> <br />
+        <label for="ra1"> Age: </label> <br />
+        <input type="radio" id="under13" name="agerange" value="" />
+          <label for="under13">Under 13</label><br />
+        <input type="radio" id="over13" name="agerange" value="" />
+          <label for="over13">Over 13</label><br />
+      </form>
+      <div class="main"> 
+        <div class="num">2</div>
+        <h4> Your Profile</h4>
+        </div>
+      <form>
+        <label for="bio"> Bio: </label> <br />
+        <textarea name="bio" rows="10" cols="30"> </textarea> <br />
+        <label for="t1"> Job Role: </label> <br />
+        <select name="web" id="web">
+          <optgroup label="Web">
+            <option value="fe">Front-End Developer</option>
+            <option value="php">PHP Developer</option>
+          </optgroup>
+          <optgroup label="Mobile">
+            <option value="android">Android Developer</option>
+            <option value="IOS">IOS Developer</option>
+          </optgroup>
+          <optgroup label="Business">
+            <option value="BO">Business Owner</option>
+            <option value="Freelancer">Freelancer</option>
+          </optgroup>
+        </select>
+        <br />
+        <label for="interests"> Interests: </label> <br />
+        <input type="checkbox" id="development" name="development" value="" />
+        <label for="development"> Development </label> <br />
+        <input type="checkbox" id="design" name="design" value="" />
+        <label for="design"> Design </label> <br />
+        <input type="checkbox" id="bussiness" name="bussiness" value="" />
+        <label for="bussiness"> Business </label> <br> 
+        <button type="submit"> Sign up </button>
+      </form>
+    </div>
+  </body>
+</html>
