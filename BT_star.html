@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .main {
+        display:flex; 
+        flex-direction: row-reverse;
+      }
+      .main-2 {
+        display: flex
+      }
+      input {
+        display: none;
+      }
+      label {
+        color: blue
+      }
+       label::after  {
+        content: "\2605";
+      }
+       
+    .main input:checked ~ label {
+        color: #d32d2d;
+      }
+     .main input:hover ~ label {
+        color: #d32d2d;}
+     
+      .main-2 label:has(~input:checked), .main-2 label:has(~input:hover){
+        color: green
+      }
+    </style>
+  </head>
+  <body>
+    <div class=container> 
+    <div class="main">
+      <input type="radio" id="ra5" name="radio" />
+      <label for="ra5"></label>
+      <input type="radio" id="ra4" name="radio" />
+      <label for="ra4" ></label>
+      <input type="radio" id="ra3" name="radio" />
+      <label for="ra3" ></label>
+      <input type="radio" id="ra2" name="radio" />
+      <label for="ra2" ></label>
+      <input type="radio" id="ra1" name="radio" />
+      <label for="ra1" ></label>
+    </div>
+    <div class="main-2">
+        <label for="ra1-2"></label>
+        <input type="radio" id="ra1-2" name="radio" />
+        <label for="ra2-2" ></label>
+        <input type="radio" id="ra2-2" name="radio" />
+        <label for="ra3-2" ></label>
+        <input type="radio" id="ra3-2" name="radio" />
+        <label for="ra4-2" ></label>
+        <input type="radio" id="ra4-2" name="radio" />
+        <label for="ra5-2" ></label>
+        <input type="radio" id="ra5-2" name="radio" />
+      </div>
+      </div>
+  </body>
+</html>

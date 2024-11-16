@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 100vh;;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+        }
+        .box {
+            width: 50px;
+            height: 10%;
+            background-color: aqua;
+            border-radius: 15px;
+            opacity: 0.5;
+            transition: 0.2s
+        }
+        .box:hover {
+            opacity: 1;
+            height: 20%;
+        }
+        .box:hover + .box {
+            height: 15%;
+            opacity: 1;
+        }
+        .box:hover + .box + .box{
+            height: 12%;
+            opacity: 1;
+        }
+        .box:has(+.box:hover) {
+            height: 15%;
+            opacity: 1;
+        }
+        .box:has(+ .box + .box:hover){
+            height: 12%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box m-1"></div>
+        <div class="box m-2"></div>
+        <div class="box m-3"></div>
+        <div class="box m-4"></div>
+        <div class="box m-5"></div>
+        <div class="box m-6"></div>
+        <div class="box m-7"></div>
+        <div class="box m-8"></div>
+        <div class="box m-9"></div>
+        <div class="box m-10"></div>
+    </div>
+</body>
+</html>
