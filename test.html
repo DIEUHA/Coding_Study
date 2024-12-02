@@ -1,32 +1,117 @@
-<div class="main">
-  <div class="yel"> </div>
-  <div class="pink"> </div>
-</div>
-<style> 
-* {margin:0}
-  .main {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color:#8AB8B6;
-    height:100%
-  }
-  .yel {
-    width:60px; 
-    height:60px; 
-    background:#F3EAD2;
-    border-radius:100% 0 0 100%;
-    position:absolute;
-    left:20px; 
-    box-shadow:120px 0 #F3EAD2, 240px 0 #F3EAD2
-  }
-  .pink {
-    width:60px; 
-    height:60px;
-    background:#D96C7B;
-    border-radius:100%;
-    position:absolute; 
-    left:80px;
-    box-shadow:120px 0 #D96C7B,240px 0 #D96C7B
-  }
-</style>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 15px; /* khoảng cách giữa các liên kết */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .breadcrumb a {
+            color: #0275d8;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Logo -->
+        <div class="logo">Logo</div>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="#">Trang Chủ</a>
+            <a href="#">Giới Thiệu</a>
+            <a href="#">Dịch Vụ</a>
+            <a href="#">Liên Hệ</a>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="#">Trang Chủ</a> &gt; 
+        <a href="#">Giới Thiệu</a> &gt; 
+        <span>Trang Demo</span>
+    </div>
+
+    <main>
+        <h2>Chào mừng bạn đến với trang web demo của chúng tôi!</h2>
+        <p>Đây là phần nội dung chính của trang web. Bạn có thể thêm văn bản, hình ảnh, video và nhiều thứ khác vào đây.</p>
+        <p>Hãy khám phá và tận hưởng!</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Trang Web Demo. Tất cả các quyền được bảo lưu.</p>
+    </footer>
+
+</body>
+</html>
