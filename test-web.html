@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger Menu with Submenu</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Basic page setup */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Hamburger Menu Container */
+      .side-menu {
+        width: 300px;
+        height: 100vh;
+        background-color: aqua;
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+      }
+
+      .side-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .side-menu li {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        position: relative; /* Position relative để submenu nằm dưới li */
+      }
+
+      .side-menu a {
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+      }
+
+      .side-menu a:hover {
+        color: #01585e;
+      }
+
+      /* Hide the checkbox input */
+      input {
+        display: none;
+      }
+
+      /* Hamburger icon */
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #01585e;
+        color: white;
+        font-size: 30px;
+        height: 60px;
+        cursor: pointer;
+      }
+
+      /* Initially show hamburger icon */
+      .fa-bars {
+        display: block;
+      }
+
+      .fa-x {
+        display: none;
+      }
+
+      /* When the checkbox is checked, show the side menu */
+      input[name="respon-menu"]:checked + label + .side-menu {
+        transform: translateX(0); /* Show the menu */
+      }
+
+      /* Hover effect for submenu */
+      .side-menu li:hover > ul {
+        display: block; /* Show the submenu when hovering over a li */
+      }
+
+      /* Initially hide all submenus */
+      .side-menu ul ul {
+        display: none;
+        position: absolute;
+        top: 100%; /* Submenu xuất hiện dưới li chính */
+        left: 0; /* Căn lề trái cho submenu */
+        background-color: #b4e1e1; /* Màu nền của submenu */
+        width: 100%; /* Chiều rộng của submenu bằng chiều rộng của li chính */
+        padding: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Style for submenu items */
+      .side-menu ul ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* Show the close icon when the menu is open */
+      input[name="respon-menu"]:checked + label .fa-bars {
+        display: none;
+      }
+
+      input[name="respon-menu"]:checked + label .fa-x {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="respon-menu">
+      <!-- Checkbox to toggle the menu -->
+      <input type="checkbox" id="respon-menu" name="respon-menu" />
+
+      <!-- Label to toggle the checkbox (hamburger and close icons) -->
+      <label for="respon-menu">
+        <i class="fa-solid fa-bars"></i> <!-- Hamburger icon -->
+        <i class="fa-solid fa-x"></i> <!-- Close icon -->
+      </label>
+
+      <!-- The side menu -->
+      <div class="side-menu">
+        <ul>
+          <li>
+            <a href="#">HOME</a>
+          </li>
+          <li>
+            <a href="#">FEATURES</a>
+            <!-- Submenu for "FEATURES" -->
+            <ul>
+              <li><a href="#">Submenu Item 1</a></li>
+              <li><a href="#">Submenu Item 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">CATEGORIES</a>
+            <!-- Submenu for "CATEGORIES" -->
+            <ul>
+              <li><a href="#">Submenu Item 1</a></li>
+              <li><a href="#">Submenu Item 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">TAGS</a>
+            <!-- Submenu for "TAGS" -->
+            <ul>
+              <li><a href="#">Submenu Item 1</a></li>
+              <li><a href="#">Submenu Item 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
