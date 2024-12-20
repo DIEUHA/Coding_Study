@@ -200,13 +200,34 @@ body:has(input[name="dark-mode"]:checked) {
   border-radius: 5px;
   height: 332px;
 }
-
+.post:hover img {
+  transform: scale(1.2);
+}
+.post .blog-info h2  {
+  background: linear-gradient(0deg, black, black) no-repeat right bottom / 0 1px;
+}
+/* .blog-container .blog-info-2 ~ h2 {
+  background: linear-gradient(0deg, black, black) no-repeat right bottom / 0 1px;
+} */
+.post:hover h2 {
+  background-size: 100% 1px;
+  background-position-x: left;
+}
+/* .blog-container:hover h2 {
+  background-size: 100% 1px;
+  background-position-x: left;
+} */
+.blog-container:hover img {
+  transform: scale(1.2);
+}
 .thumbnail {
   width: 40%;
+  overflow: hidden;
 }
 .thumbnail > img {
   height: 100%;
   object-fit: cover;
+  transition: all 1s;
 }
 .p-4 .thumbnail > img {
   height: 100%;
@@ -272,11 +293,15 @@ p {
   gap: 10px;
   padding: 40px 0;
 }
+
 .catebox {
   border-radius: 0 50px 50px 50px;
   text-align: center;
   place-content: center;
   color: white;
+}
+.catebox-container .catebox:hover .color {
+  opacity: 1;
 }
 .blog-info .catebox {
   width: max-content;
@@ -310,6 +335,7 @@ p {
   width: 100%;
   height: 100%;
   opacity: 0.4;
+  transition: all 1s;
 }
 .catebox-container .catebox .c-1 {
   background-color: rgb(214 164 17);
@@ -380,6 +406,7 @@ p {
   width: 70%;
   font-size: smaller;
   padding-left: 10px;
+  place-content: center;
 }
 .blog-container .blog-info-2 .t-1 span:first-child {
   color: #d6a411;
@@ -421,6 +448,11 @@ p {
   border-radius: 5px;
   text-align: center;
   place-content: center;
+  transition: all 1s;
+}
+.tag:hover {
+  background-color: red;
+  color: white;
 }
 footer {
   display: flex;
@@ -495,6 +527,16 @@ footer .footer-tag .f-tag {
   color: grey;
   text-transform: uppercase;
   font-size: smaller;
+  transition: all 1s;
+  /* &:hover {
+    color: white;
+    border-radius: 20px 0px 20px 20px;
+  } */
+}
+footer .footer-tag .f-tag:hover {
+  background-color: red;
+  color: white;
+  border-radius: 20px 0px 20px 20px;
 }
 footer h4 {
   font-size: 1.5rem;
@@ -517,7 +559,7 @@ footer h4 {
 .copy-right .f-list span:hover {
   color: red;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-width: 768px) {
   header {
     display: flex;
     justify-content: space-between;
@@ -554,16 +596,6 @@ footer h4 {
     font-size: 26px;
   }
 
-  input[name="respon-menu"]:checked + label + .side-menu {
-    right: 0;
-    z-index: 0;
-    opacity: 1;
-    left: -200px;
-    top: -35px;
-    padding: 80px 24px;
-    width: 500px;
-    height: 100vh;
-  }
   .side-menu ul .side {
     list-style: none;
     place-content: center;
@@ -603,22 +635,50 @@ footer h4 {
   }
   input[name="respon-menu"]:checked + label .fa-x {
     display: block; /* Show the close icon */
-    position: absolute;
+    position: fixed;
     z-index: 1;
     font-size: 26px;
   }
   input[name="respon-menu"]:checked + label .fa-bars {
     display: none; /* Show the close icon */
   }
+  .post {
+    flex-direction: column;
+    height: 633px;
+    padding: 20px;
+  }
+  .thumb-post {
+    height: 50%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .blog-info {
+    height: 50%;
+    width: 100%;
+  }
   .side-menu {
     background-color: var(--header-color);
-    position: absolute;
+    position: fixed;
     opacity: 0;
-    left: 300px;
+    top: -20px;
+    right: -500px;
     transition: all 1s;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: 100vh;
+  }
+  input[name="respon-menu"]:checked + label + .side-menu {
+    right: 0;
+    z-index: 0;
+    opacity: 1;
+    top: -20px;
+    padding: 80px 24px;
   }
   input[name="search-box"]:focus {
     left: -80px;
+  }
+   .blog-info-2 a, .blog-info h2, .blog-info-2 h2 {
+    -webkit-line-clamp: 1
   }
   footer {
     display: grid;
@@ -635,5 +695,150 @@ footer h4 {
   }
   footer .browser-tag {
     width: 100%;
+  }
+}
+@media screen and (max-width:767px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+  .left-post-list {
+    width: 100%;
+  }
+  .right-categories {
+    width: 100%;
+    padding: 0;
+  }
+  .menu {
+    display: none;
+  }
+  .search-area .respon-menu {
+    display: block;
+  }
+  .respon-menu {
+    position: relative;
+  }
+  input[name="respon-menu"] {
+    display: none;
+  }
+  label[for="respon-menu"] .fa-x {
+    display: none;
+  }
+  .fa-bars {
+    position: absolute;
+    z-index: 1;
+    font-size: 26px;
+  }
+
+  .side-menu ul .side {
+    list-style: none;
+    place-content: center;
+    padding: 20px 0 0;
+  }
+
+  .side-menu ul .side ul li {
+    list-style: none;
+    padding: 16px;
+    display: none;
+  }
+  .side-menu ul .side:hover ul li {
+    display: block;
+    border-bottom: solid 0.5px var(--border-color);
+    transform: scaleY(1);
+  }
+  .side-menu ul .side:hover > a {
+    color: blue;
+  }
+  .side-menu ul .side ul li a::before {
+    content: "";
+    position: absolute;
+    background-color: red;
+    width: 12px;
+    height: 3px;
+    left: 2px;
+    top: 25px;
+    transition: 0.4s;
+    opacity: 0;
+  }
+  .side-menu ul .side ul li a:hover::before {
+    opacity: 1;
+  }
+  hr {
+    margin-top: 24px;
+    color: var(--border-color);
+  }
+  input[name="respon-menu"]:checked + label .fa-x {
+    display: block; /* Show the close icon */
+    position: fixed;
+    z-index: 1;
+    font-size: 26px;
+  }
+  input[name="respon-menu"]:checked + label .fa-bars {
+    display: none; /* Show the close icon */
+  }
+  .post {
+    flex-direction: column;
+    height: 633px;
+    padding: 15px 5px;
+  }
+  .thumb-post {
+    height: 50%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .blog-info {
+    height: 50%;
+    width: 100%;
+    padding: 32px 16px 16px;
+  }
+  .side-menu {
+    background-color: var(--header-color);
+    position: fixed;
+    opacity: 0;
+    top: -20px;
+    right: -500px;
+    transition: all 1s;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    height: 120vh;
+  }
+  input[name="respon-menu"]:checked + label + .side-menu {
+    right: 0;
+    z-index: 0;
+    opacity: 1;
+    top: -20px;
+    padding: 80px 24px;
+  }
+  input[name="search-box"]:focus {
+    left: -80px;
+  }
+   .blog-info-2 a, .blog-info h2, .blog-info-2 h2 {
+    -webkit-line-clamp: 1
+  }
+  footer {
+    display: grid;
+    gap: 50px;
+    padding: 30px;
+  }
+  footer .about {
+    width: 100%;
+  }
+  footer .useful-link {
+    width: 100%;
+  }
+  footer .popular-post {
+    width: 100%;
+  }
+  footer .browser-tag {
+    width: 100%;
+  }
+  .copy-right {
+    flex-direction: column;
   }
 }
