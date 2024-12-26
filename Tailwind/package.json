@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "balanced-match": "^3.0.1"
   }
 }
